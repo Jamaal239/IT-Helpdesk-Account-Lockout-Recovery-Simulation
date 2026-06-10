@@ -1,75 +1,48 @@
-# IT Helpdesk Account Lockout & Recovery Simulation (Jane Doe)
+# Enterprise IT Support & Identity Management Pipeline: End-to-End Incident Triage & Active Directory Remediation
 
-## 📋 Project Overview
-This project demonstrates how to resolve an urgent employee account lockout from start to finish. The workflow begins with the user experience—submitting a support request through the Jira customer portal. From there, I stepped into the role of an IT Support Technician to triage the ticket, access the Windows Server lab environment via VirtualBox, and use Active Directory Users and Computers (ADUC) to safely unlock the profile and reset credentials following standard password security compliance.
+## Project Overview
+This project serves as a comprehensive, production-grade documentation of an enterprise-level IT Support and Systems Administration lifecycle. It simulates a high-pressure, time-sensitive corporate incident: an executive/employee account lockout during a critical business window. 
 
----
+The objective of this project is to demonstrate the seamless integration between front-end ITSM triage systems and back-end Identity & Access Management (IAM) infrastructure. The entire lifecycle—from customer ingestion, automated SLA tracking, virtualization infrastructure validation, directory service remediation, to formal incident closure—is fully visualized and documented below.
 
-## 🎯 Tools Used
-* **Ticketing System:** Jira Service Desk (Cloud)
-* **Identity Management:** Windows Server (Active Directory)
-* **Virtualization Hypervisor:** Oracle VirtualBox
-
----
-
-## 📜 Step-by-Step Project Walkthrough
-
-### Part 1: Ticket Creation & Triage in Jira
-
-#### Step 1: Submitting the Support Request
-An employee (Jane Doe) experiences an account lockout and utilizes the Jira Service Desk customer portal to submit an urgent access recovery ticket.
-
-![Submitting the Support Request](./screenshots/screenshot_01.png)
-
-#### Step 2: Reviewing the Incoming Queue
-Logging into the Jira agent dashboard to locate the newly submitted account lockout ticket sitting in the open incident queue.
-
-![Reviewing the Incoming Queue](./screenshots/screenshot_02.png)
-
-#### Step 3: Assigning and Owning the Ticket
-Moving the ticket out of the unassigned pool and assigning it to my administrator profile to take formal ownership of the issue.
-
-![Assigning and Owning the Ticket](./screenshots/screenshot_03.png)
+### Target Objectives & Key Results (OKRs)
+* **Minimize MTTR (Mean Time to Resolution):** Remediate a business-critical account lockout within a strict 48-hour SLA window (achieved in under 20 minutes simulation time).
+* **Maintain Audit Trail Compliance:** Ensure all infrastructure modifications (password resets, policy enforcements) are accurately mirrored inside the ITSM internal audit notes.
+* **Enforce Zero-Trust Credentialing:** Guarantee that all administrative overrides force end-user credential rotation upon next authentication.
 
 ---
 
-### Part 2: Account Recovery & Password Reset in Active Directory
+## Technical Stack & Architecture
 
-#### Step 4: Verifying the Directory State
-Launching Active Directory Users and Computers (ADUC) inside the Windows Server domain environment to inspect the `_Employees` organizational unit and check Jane Doe's account status.
+| Component | Technology | Role / Function |
+| :--- | :--- | :--- |
+| **ITSM Platform** | Jira Service Management (Cloud) | Ticket ingestion, queue management, SLA enforcement, customer communication hub. |
+| **Hypervisor** | Oracle VirtualBox Manager v7.x | Hosts enterprise virtual machine infrastructure locally. |
+| **Directory Services** | Active Directory Domain Services (AD DS) | Identity & Access Management provider for the `mydomain.local` forest. |
+| **Guest OS (Server)** | Windows Server 2022 Standard | Active Directory Domain Controller (`DC1`). |
+| **Guest OS (Client)** | Windows 11 Pro | Enterprise corporate endpoint machine (`Windows-11-Client`). |
 
-![Verifying the Directory State](./screenshots/screenshot_04.png)
-
-#### Step 5: Executing the Reset & Account Unlock
-Opening Jane Doe's user object properties to clear the account lockout flag, apply a secure temporary password string, and enforce a password change at the next system logon.
-
-![Executing the Reset & Account Unlock](./screenshots/screenshot_05.png)
-
-#### Step 6: Confirming Directory Object Changes
-Reviewing the final confirmation summary screen within the Active Directory administrative wizard before committing the modification to the domain database.
-
-![Confirming Directory Object Changes](./screenshots/screenshot_06.png)
-
-#### Step 7: Final Active Directory Verification
-Confirming that the user object properties successfully updated and saved inside the live operational container list next to the other domain profiles.
-
-![Final Active Directory Verification](./screenshots/screenshot_07.png)
+### Network Topology Mapping
+To ensure strict security and prevent interference with home production networks, the virtualization layer relies on a segregated software-defined network:
+* **Network Type:** VirtualBox Internal Network (`intnet`)
+* **Domain Name:** `mydomain.local`
+* **Domain Controller (`DC1`):** Static IP allocation with Active Directory, DNS, and DHCP services active.
+* **Client Machine:** DHCP-assigned lease via `DC1`, joined to the `mydomain.local` domain.
 
 ---
 
-### Part 3: Documentation & Ticket Closure
+## Repository Structure
+To ensure that your portfolio page displays all visual evidence correctly, arrange your local workspace to mirror the directory tree below before pushing to GitHub:
 
-#### Step 8: Logging the Internal Audit Note
-Adding a comprehensive technical comment directly to the Jira ticket history detailing the password policy adjustments and verification parameters for formal documentation.
-
-![Logging the Internal Audit Note](./screenshots/screenshot_08.png)
-
-#### Step 9: Submitting the Resolution Form
-Filling out the administrative closure parameters, inputting the system resolution codes, and updating the final work status.
-
-![Submitting the Resolution Form](./screenshots/screenshot_09.png)
-
-#### Step 10: Final Ticket Closure Status
-Verifying the final view of the IT service desk workspace to ensure the incident has been officially and successfully archived as 'Done'.
-
-![Final Ticket Closure Status](./screenshots/screenshot_10.png)
+```text
+├── README.md
+└── images/
+    ├── screenshot_01.png
+    ├── screenshot_02.png
+    ├── screenshot_03.png
+    ├── screenshot_04.png
+    ├── screenshot_05.png
+    ├── screenshot_06.png
+    ├── screenshot_07.png
+    ├── screenshot_08.png
+    └── screenshot_09.png
