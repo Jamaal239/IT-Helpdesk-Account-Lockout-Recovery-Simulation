@@ -1,4 +1,4 @@
-# IT Helpdesk Account Lockout & Recovery Simulation (Jane Doe)
+# IT Helpdesk Account Lockout & Recovery Simulation (Jane Doe) EDIT FURTHER!!!
 
 ## Project Overview
 This project demonstrates how to resolve an urgent employee account lockout from start to finish. The workflow begins with the user experience—submitting a support request through the Jira customer portal. From there, I stepped into the role of an IT Support Technician to triage the ticket, access the Windows Server lab environment via VirtualBox, and use Active Directory Users and Computers (ADUC) to safely unlock the profile and reset credentials following standard password security compliance.
