@@ -1,7 +1,7 @@
-# Enterprise IT Support & Identity Management Pipeline: End-to-End Incident Triage & Active Directory Remediation
+# Enterprise IT Support & Identity Management Pipeline: End-to-End Incident Triage & Active Directory Remediation (2026)
 
 ## Project Overview
-This project serves as a comprehensive, production-grade documentation of an enterprise-level IT Support and Systems Administration lifecycle. It simulates a high-pressure, time-sensitive corporate incident: an executive/employee account lockout during a critical business window. 
+This project serves as a comprehensive, production-grade documentation of an enterprise-level IT Support and Systems Administration lifecycle updated for 2026 operational standards. It simulates a high-pressure, time-sensitive corporate incident: an executive/employee account lockout during a critical business window. 
 
 The objective of this project is to demonstrate the seamless integration between front-end ITSM triage systems and back-end Identity & Access Management (IAM) infrastructure. The entire lifecycle—from customer ingestion, automated SLA tracking, virtualization infrastructure validation, directory service remediation, to formal incident closure—is fully visualized and documented below.
 
@@ -20,7 +20,7 @@ The objective of this project is to demonstrate the seamless integration between
 | **Hypervisor** | Oracle VirtualBox Manager v7.x | Hosts enterprise virtual machine infrastructure locally. |
 | **Directory Services** | Active Directory Domain Services (AD DS) | Identity & Access Management provider for the `mydomain.local` forest. |
 | **Guest OS (Server)** | Windows Server 2022 Standard | Active Directory Domain Controller (`DC1`). |
-| **Guest OS (Client)** Pro | Enterprise corporate endpoint machine (`Windows-11-Client`). |
+| **Guest OS (Client)** | Windows 11 Pro | Enterprise corporate endpoint machine (`Windows-11-Client`). |
 
 ### Network Topology Mapping
 To ensure strict security and prevent interference with home production networks, the virtualization layer relies on a segregated software-defined network:
