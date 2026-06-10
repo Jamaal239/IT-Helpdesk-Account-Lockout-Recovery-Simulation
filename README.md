@@ -20,7 +20,7 @@ The objective of this project is to demonstrate the seamless integration between
 | **Hypervisor** | Oracle VirtualBox Manager v7.x | Hosts enterprise virtual machine infrastructure locally. |
 | **Directory Services** | Active Directory Domain Services (AD DS) | Identity & Access Management provider for the `mydomain.local` forest. |
 | **Guest OS (Server)** | Windows Server 2022 Standard | Active Directory Domain Controller (`DC1`). |
-| **Guest OS (Client)** | Windows 11 Pro | Enterprise corporate endpoint machine (`Windows-11-Client`). |
+| **Guest OS (Client)** Pro | Enterprise corporate endpoint machine (`Windows-11-Client`). |
 
 ### Network Topology Mapping
 To ensure strict security and prevent interference with home production networks, the virtualization layer relies on a segregated software-defined network:
@@ -62,13 +62,13 @@ Before accessing directory tools, the administrator verifies the health and oper
 ### Phase 3: Identity & Access Management Remediation
 The administrator establishes a secure session into the Domain Controller (`DC1`) and initializes the Active Directory Users and Computers (ADUC) management console to query the target account.
 
-![Active Directory Users and Computers interface showing the _Employees organizational unit](screenshot_05%20.png)
+![Active Directory Users and Computers interface showing the _Employees organizational unit](screenshot_05.png)
 *Figure 5: Navigating the logical directory structure (`mydomain.local` -> `_Employees` Organizational Unit) to locate the user record for Jane Doe.*
 
 To safely restore user access, the administrator executes a password override. Simultaneously, the system automatically clears the underlying security lockout attribute flags.
 
-![Active Directory password reset dialog box with 'User must change password at next logon' checked](screenshot_06%20.png)
-*Figure 6: Performing a secure password reset and enforcing a mandatory password change upon the next user login.*
+![Active Directory password reset dialog box with 'User must change password at next logon' checked](screenshot_06.png)
+*Figure 6: Configuring secure temporary credentials. Enforcing 'User must change password at next logon' to maintain compliance with standard zero-trust IAM frameworks.*
 
 ---
 
@@ -80,7 +80,7 @@ Following successful infrastructure changes, the administrator updates internal 
 
 With documentation satisfied, the administrator initiates the workflow transition state to formally shift the incident out of the active engineering queue.
 
-![The Jira 'Resolve this issue' pop-up screen filled out with resolution comments](screenshot_08%20.png)
+![The Jira 'Resolve this issue' pop-up screen filled out with resolution comments](screenshot_08.png)
 *Figure 8: Closing the ticket workspace loop by specifying the finalized resolution code and pushing the ticket to public-facing closure.*
 
 The ticket lifecycle reaches a terminal status of `Resolved`. All processing clocks halt, and the successful mitigation is stored within the platform index for future knowledge base cross-referencing.
